@@ -1,16 +1,13 @@
 /**
- * Created by Vladimir on 12/14/17.
+ * Created by Vladimir on 12/24/17.
  */
-import { Comment } from './comment';
 
-export class Dish {
+export class Promotion {
   id: number;
   name: string;
   image: string;
-  category: string;
   label: string;
   price: string;
   featured: boolean;
   description: string;
-  comments: Comment[];
 }
