@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -37,7 +38,7 @@ import { ContactComponent } from './contact/contact.component';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [DishService, PromotionService],
+  providers: [DishService, PromotionService, LeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

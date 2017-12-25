@@ -30,3 +30,4 @@ export class DishdetailComponent implements OnInit {
   }
 
 }
+
