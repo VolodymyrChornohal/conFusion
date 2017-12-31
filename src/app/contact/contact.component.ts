@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
 
   feedbackForm: FormGroup;
   feedback: Feedback;
-  contactType: ContactType;
+  contactType;
 
   constructor(private fb: FormBuilder) {
     this.createForm();
@@ -34,7 +34,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.feedback = this.feedbackForm.value();
+    this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
     this.feedbackForm.reset();
   }
