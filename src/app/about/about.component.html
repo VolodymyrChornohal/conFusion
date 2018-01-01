@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="leaders">
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="70">
         <h2>Our History</h2>
@@ -39,8 +39,11 @@
       </div>
     </div>
   </div>
+  <div [hidden]="leaders">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="leaders">
     <md-card>
       <blockquote>
         <h3>You better cut the pizza in four pieces because
@@ -51,6 +54,9 @@
         </footer>
       </blockquote>
     </md-card>
+  </div>
+  <div [hidden]="leaders">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
   </div>
 
   <div fxFlex *ngIf="leaders">
@@ -71,4 +77,8 @@
       </md-list-item>
     </md-list>
   </div>
+  <div [hidden]="leaders">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+
 </div>
