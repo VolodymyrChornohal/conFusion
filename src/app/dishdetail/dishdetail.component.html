@@ -37,15 +37,17 @@
         <p md-line>{{ comment.author }} {{ comment.date | date }}</p>
       </md-list-item>
     </md-list>
-    <md-list>
-      <md-list-item>
-        <p md-line>{{ commentForm.value.comment | json }}</p>
-        <p md-line>{{ commentForm.value.rating | json }}</p>
-        <p md-line>{{ commentForm.value.author}} {{ date | date }}</p>
-      </md-list-item>
-    </md-list>
 
     <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <span [hidden]="commentForm.invalid">
+      <md-list>
+        <md-list-item>
+          <p md-line>{{ commentForm.value.comment | json }}</p>
+          <p md-line>{{ commentForm.value.rating | json }}</p>
+          <p md-line>{{ commentForm.value.author}} {{ date | date }}</p>
+        </md-list-item>
+      </md-list>
+      </span>
       <p>
         <md-input-container class="full-width"
                             dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
