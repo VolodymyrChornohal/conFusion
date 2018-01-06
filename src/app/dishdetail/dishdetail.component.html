@@ -28,7 +28,7 @@
     </md-card>
   </div>
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" class="form-size">
     <md-list >
       <h3>Comments</h3>
       <md-list-item *ngFor="let comment of dish.comments">
@@ -47,7 +47,7 @@
 
     <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <p>
-        <md-input-container class="half-width"
+        <md-input-container class="full-width"
                             dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
           <input mdInput formControlName="author" placeholder="Athor" type="text" required>
           <md-hint>
@@ -61,7 +61,7 @@
                    aria-label="Rating" formControlName="rating"></md-slider>
       </p>
       <p>
-        <md-input-container class="half-width"
+        <md-input-container class="full-width"
                             dividerColor="{{(formErrors.comment) ? 'warn' : 'primary'}}">
           <textarea mdInput formControlName="comment" placeholder="Your Feedback" rows=12></textarea>
           <md-hint>
