@@ -19,15 +19,15 @@ export class DishService {
   private processHTTPMsgService: ProcessHTTPMsgService) { }
 
   getDishes(): Observable<Dish[]> {
-    return this.http.get( baseURL + 'dishes' ).map(res => { return this.processHTTPMsgService.extractData(res) });
+    return this.http.get( baseURL + 'dishes' ).map(res => { return this.processHTTPMsgService.extractData(res); });
   }
 
   getDish(id: number): Observable<Dish> {
-    return this.http.get( baseURL + 'dishes/' + id ).map(res => { return this.processHTTPMsgService.extractData(res) });
+    return this.http.get( baseURL + 'dishes/' + id ).map(res => { return this.processHTTPMsgService.extractData(res); });
   }
 
   getFeaturedDish(): Observable<Dish> {
-    return this.http.get( baseURL + 'dishes?featured=true' ).map(res => { return this.processHTTPMsgService.extractData(res) });
+    return this.http.get( baseURL + 'dishes?featured=true' ).map(res => { return this.processHTTPMsgService.extractData(res)[0]; });
   }
 
   getDishIds(): Observable<number[]> {
