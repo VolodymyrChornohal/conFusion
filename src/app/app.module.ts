@@ -53,7 +53,7 @@ import { LoginComponent } from './login/login.component';
     PromotionService,
     LeaderService,
     ProcessHTTPMsgService,
-    { provide: 'baseURL', useValue: baseURL }],
+    { provide: 'BaseURL', useValue: baseURL }],
   entryComponents: [ LoginComponent ],
   bootstrap: [AppComponent]
 })

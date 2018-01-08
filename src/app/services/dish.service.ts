@@ -9,6 +9,7 @@ import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 
 @Injectable()
