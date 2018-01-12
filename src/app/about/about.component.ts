@@ -21,12 +21,14 @@ import { Params, ActivatedRoute } from '@angular/router';
 export class AboutComponent implements OnInit {
 
   leaders: Leader[];
+  leadersErrMess: string;
 
   constructor( private leaderservice: LeaderService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.leaderservice.getLeaders().subscribe(leaders => this.leaders = leaders);
+    this.leaderservice.getLeaders().subscribe(leaders => this.leaders = leaders,
+    errmess => this.leadersErrMess = <any>errmess);
   }
 
 }
