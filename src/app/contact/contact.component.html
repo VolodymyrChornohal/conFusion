@@ -35,27 +35,29 @@
       </div>
     </div>
   </div>
-  <div [hidden]="!feedback">
-    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
-  </div>
-  <div *ngIf="submittedFeedback">
-    <h2>Your Feedback</h2>
-    <md-list>
-      <md-list-item>
-        <p md-line>First Name: {{ submittedFeedback.firstname }}</p>
-        <p md-line>Last Name: {{ submittedFeedback.lastname }}</p>
-        <p md-line>Tel. Nember: {{ submittedFeedback.telnum }} </p>
-        <p md-line>Email: {{ submittedFeedback.email }}</p>
-        <p md-line>Contact you?{{ submittedFeedback.agree }}</p>
-        <p md-line>How?: {{ submittedFeedback.contacttype }}</p>
-        <p md-line>Feedback: {{ submittedFeedback.message }} </p>
-      </md-list-item>
-    </md-list>
-  </div>
-  <div fxFlex fxFlexOffset="20px" class="form-size" [@visibility]="visibility" [@expand]>
-    <h3>Send us your Feedback</h3>
 
-    <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>Send us your Feedback</h3>
+    <div [hidden]="!feedback">
+      <h2>Submitting Form</h2>
+      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
+    <div *ngIf="submittedFeedback">
+      <h2>Your Feedback</h2>
+      <md-list>
+        <md-list-item>
+          <p md-line>First Name: {{ submittedFeedback.firstname }}</p>
+          <p md-line>Last Name: {{ submittedFeedback.lastname }}</p>
+          <p md-line>Tel. Nember: {{ submittedFeedback.telnum }} </p>
+          <p md-line>Email: {{ submittedFeedback.email }}</p>
+          <p md-line>Contact you?{{ submittedFeedback.agree }}</p>
+          <p md-line>How?: {{ submittedFeedback.contacttype }}</p>
+          <p md-line>Feedback: {{ submittedFeedback.message }} </p>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" [@visibility]="visibility" [@expand]>
       <p>
         <md-input-container class="half-width"
                             dividerColor="{{(formErrors.firstname) ? 'warn' : 'primary'}}">
