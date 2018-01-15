@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
   feedback: Feedback;
   contactType;
   submittedFeedback: Feedback;
-  visibility: 'shown';
+  visibility = 'shown';
 
   formErrors = {
     'firstname': '',
